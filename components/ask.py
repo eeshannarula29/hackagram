@@ -1,3 +1,5 @@
+"""File contains the Question class used to ask questions in the terminal"""
+
 from PyInquirer import prompt
 from typing import Optional, Any
 
