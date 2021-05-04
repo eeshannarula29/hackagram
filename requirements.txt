@@ -1,0 +1,7 @@
+PyInquirer
+
+requests~=2.25.1
+validate_email
+
+firebase_admin
+pyrebase4
