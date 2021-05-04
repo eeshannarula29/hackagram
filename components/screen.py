@@ -9,6 +9,8 @@ from typing import Any, Optional
 
 from firebase_manager.handler import Handler
 
+from exc import HandlerNotProvidedError
+
 
 class View:
 
@@ -50,8 +52,3 @@ def screen_size() -> tuple[int, int]:
     """Return the size of the screen"""
     size = os.get_terminal_size()
     return size.lines, size.columns
-
-
-class HandlerNotProvidedError(Exception):
-    def __str__(self) -> str:
-        return 'No handler was provide while initialization of a view'
