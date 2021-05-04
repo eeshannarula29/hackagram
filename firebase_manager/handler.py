@@ -1,3 +1,6 @@
+"""File contains Handler class which handles the Auth and Database classes
+to handle the users of the app"""
+
 from firebase_manager.authentication import Auth
 from firebase_manager.database import Database
 
