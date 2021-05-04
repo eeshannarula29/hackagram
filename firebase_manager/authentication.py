@@ -1,3 +1,5 @@
+"""The file contains the Auth class used to authenticate the user and handle account"""
+
 from typing import Any
 
 import pyrebase
