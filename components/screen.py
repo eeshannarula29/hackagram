@@ -1,3 +1,5 @@
+"""The file contains the View class, which is the super class for all the views/screens of the app"""
+
 from __future__ import annotations
 
 import os
