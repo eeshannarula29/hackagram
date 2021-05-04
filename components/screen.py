@@ -46,6 +46,12 @@ def clear_screen() -> None:
         os.system('cls')
 
 
+def screen_size() -> tuple[int, int]:
+    """Return the size of the screen"""
+    size = os.get_terminal_size()
+    return size.lines, size.columns
+
+
 class HandlerNotProvidedError(Exception):
     def __str__(self) -> str:
         return 'No handler was provide while initialization of a view'
