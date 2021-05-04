@@ -1,3 +1,5 @@
+"""File contains the Database class used to get set and delete data for a user"""
+
 from typing import Any, Optional
 
 import firebase_admin
