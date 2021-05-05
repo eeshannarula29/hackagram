@@ -37,8 +37,8 @@ class View:
         """Return the option the user choose"""
         raise NotImplementedError
 
-    def get_child(self) -> Optional[View]:
-        """Return the child view (uses self.inquire)"""
+    def present(self) -> Optional[View]:
+        """present self in the app and Return the child view (uses self.inquire)"""
         raise NotImplementedError
 
 

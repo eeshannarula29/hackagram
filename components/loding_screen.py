@@ -36,7 +36,7 @@ class LoadingView(View):
     def inquire(self) -> Optional[Any]:
         return None
 
-    def get_child(self) -> Optional[View]:
+    def present(self) -> Optional[View]:
 
         while self.progress.progress_percentage != 100.0:
             clear_screen()
