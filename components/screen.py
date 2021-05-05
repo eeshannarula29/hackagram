@@ -13,7 +13,16 @@ from exc import HandlerNotProvidedError
 
 
 class View:
+    """Represents a screen/view on the app
 
+    Attribute Instances:
+    - parent: the parent view object from which self was presented
+    - child: the child view which self would throw as the next screen
+    - handler: the handler used to handle the user
+
+    Note: if a parent is provided then there is no need to provide a handler, but one of
+    them needs to be provided.
+    """
     def __init__(self, parent: Optional[View] = None, handler: Optional[Handler] = None, child: Optional[View] = None) -> None:
         # Raise an error if both parent and handler are not provided
         if not parent and not handler:
