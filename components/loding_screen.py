@@ -44,4 +44,4 @@ class LoadingView(View):
             self.progress.increment()
             time.sleep(.1)
 
-            return self.next if self.next else self.inquire()
+        return self.next if self.next else self.inquire()
