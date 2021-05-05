@@ -4,7 +4,7 @@ to handle the users of the app"""
 from firebase_manager.authentication import Auth
 from firebase_manager.database import Database
 
-from exc import SignInError, SignUpError, RefreshError, TokenError, InvalidToken
+from exc import *
 
 
 class Handler:
