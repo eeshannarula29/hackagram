@@ -8,8 +8,12 @@ import sys
 from typing import Any, Optional
 
 from firebase_manager.handler import Handler
+from pyfiglet import figlet_format
 
 from exc import HandlerNotProvidedError
+
+LOGO = figlet_format('HACKAGRAM')
+LOGO_ARRAY = LOGO.split('\n')
 
 
 class View:
@@ -23,6 +27,7 @@ class View:
     Note: if a parent is provided then there is no need to provide a handler, but one of
     them needs to be provided.
     """
+
     def __init__(self, parent: Optional[View] = None, handler: Optional[Handler] = None, child: Optional[View] = None) -> None:
         # Raise an error if both parent and handler are not provided
         if not parent and not handler:
@@ -63,3 +68,16 @@ def screen_size() -> tuple[int, int]:
     """Return the size of the screen"""
     size = os.get_terminal_size()
     return size.lines, size.columns
+
+
+def render_logo() -> str:
+    """Return string representation of logo of the app"""
+    string_so_far = '\n'
+    size = screen_size()
+
+    indent = size[1] // 2 - len(LOGO_ARRAY[0]) // 2
+
+    for text_row in LOGO_ARRAY:
+        string_so_far += ' ' * indent + text_row + '\n'
+
+    return string_so_far
