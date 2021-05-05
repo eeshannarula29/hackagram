@@ -47,8 +47,8 @@ class View:
         """Return the content of the view"""
         raise NotImplementedError
 
-    def inquire(self) -> Optional[Any]:
-        """Return the option the user choose"""
+    def inquire(self) -> Optional[View]:
+        """Return the view corresponding to option the user choose"""
         raise NotImplementedError
 
     def present(self) -> Optional[View]:

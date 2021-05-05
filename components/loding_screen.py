@@ -3,11 +3,14 @@
 from pyfiglet import figlet_format
 
 from components.progress_bar import *
+from components.sign_screen import *
 from components.screen import *
 import time
 
 LOGO = figlet_format('HACKAGRAM')
 LOGO_ARRAY = LOGO.split('\n')
+
+LOAD_SPEED = .05
 
 
 class LoadingView(View):
@@ -33,8 +36,9 @@ class LoadingView(View):
 
         return string_so_far
 
-    def inquire(self) -> Optional[Any]:
-        return None
+    def inquire(self) -> Optional[View]:
+        self.next = SignView(parent=self)
+        return self.next
 
     def present(self) -> Optional[View]:
 
@@ -42,6 +46,6 @@ class LoadingView(View):
             clear_screen()
             print(self.show())
             self.progress.increment()
-            time.sleep(.1)
+            time.sleep(LOAD_SPEED)
 
         return self.next if self.next else self.inquire()
