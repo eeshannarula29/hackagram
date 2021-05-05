@@ -14,7 +14,7 @@ from exc import HandlerNotProvidedError
 
 class View:
 
-    def __init__(self, parent: Optional[View] = None, handler: Optional[Handler] = None) -> None:
+    def __init__(self, parent: Optional[View] = None, handler: Optional[Handler] = None, child: Optional[View] = None) -> None:
         # Raise an error if both parent and handler are not provided
         if not parent and not handler:
             raise HandlerNotProvidedError
@@ -26,6 +26,8 @@ class View:
             self.handler = parent.handler
         # finally set self.parent to parent
         self.parent = parent
+        # set up the next screen
+        self.next = child
 
     def show(self) -> Optional[str]:
         """Return the content of the view"""
