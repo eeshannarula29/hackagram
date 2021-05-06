@@ -39,4 +39,5 @@ class SignView(View):
     def present(self) -> Optional[View]:
         clear_screen()
         print(self.show())
-        return self.inquire()
+        self.next = self.inquire()
+        return self.next

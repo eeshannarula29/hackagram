@@ -1,3 +1,4 @@
+from components.verification_screen import *
 from components.screen import *
 from components.ask import *
 from exc import *
@@ -21,8 +22,8 @@ class RegisterView(View):
         try:
             self.handler.register(email, password)
             self.handler.auth.send_verification(self.handler.token)
-            
-            return None
+
+            return VerificationView(parent=self)
 
         except SignUpError:
             print(f'\n {SKULL} The email or the password is incorrect \n')
@@ -42,4 +43,5 @@ class RegisterView(View):
     def present(self) -> Optional[View]:
         clear_screen()
         print(self.show())
-        return self.inquire()
+        self.next = self.inquire()
+        return self.next
