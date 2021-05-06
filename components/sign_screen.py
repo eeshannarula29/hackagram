@@ -13,9 +13,6 @@ SMILEY = '\U0001f600'  # 😀
 
 class SignView(View):
 
-    def show(self) -> Optional[str]:
-        return render_logo()
-
     def inquire(self) -> Optional[View]:
 
         question = ListQuestion(f'Hi {WAVE}, Please Sign In or Register', ['Register', 'SignIn', 'Quit'])
