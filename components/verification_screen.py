@@ -25,9 +25,3 @@ class VerificationView(View):
 
             else:
                 return self
-
-    def present(self) -> Optional[View]:
-        clear_screen()
-        print(self.show())
-        self.next = self.inquire()
-        return self.next

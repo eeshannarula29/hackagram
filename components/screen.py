@@ -53,7 +53,10 @@ class View:
 
     def present(self) -> Optional[View]:
         """present self in the app and Return the child view (uses self.inquire)"""
-        raise NotImplementedError
+        clear_screen()
+        print(self.show())
+        self.next = self.inquire()
+        return self.next
 
 
 def clear_screen() -> None:
