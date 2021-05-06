@@ -45,7 +45,7 @@ class View:
 
     def show(self) -> Optional[str]:
         """Return the content of the view"""
-        raise NotImplementedError
+        return render_logo()
 
     def inquire(self) -> Optional[View]:
         """Return the view corresponding to option the user choose"""

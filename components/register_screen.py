@@ -9,9 +9,6 @@ SKULL = "☠️"
 
 class RegisterView(View):
 
-    def show(self) -> Optional[str]:
-        return render_logo()
-
     def inquire(self) -> Optional[View]:
         email_question = InputQuestion("Enter your email address:")
         password_question = PasswordQuestion("Enter new Password:")

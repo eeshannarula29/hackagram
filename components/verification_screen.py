@@ -6,9 +6,6 @@ MAIL = "📬"
 
 class VerificationView(View):
 
-    def show(self) -> Optional[str]:
-        return render_logo()
-
     def inquire(self) -> Optional[View]:
 
         if self.handler.auth.get_user_info(self.handler.token)['users'][0]['emailVerified']:
