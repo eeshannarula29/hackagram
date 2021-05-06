@@ -3,6 +3,7 @@
 Cheatsheet for emojis: https://unicode.org/emoji/charts/emoji-list.html
 """
 from components.register_screen import *
+from components.sign_in_screen import *
 from components.screen import *
 from components.ask import *
 
@@ -28,7 +29,7 @@ class SignView(View):
             return RegisterView(parent=self)
 
         elif answer == 'SignIn':
-            return None
+            return SignInView(parent=self)
 
         else:
             return self
