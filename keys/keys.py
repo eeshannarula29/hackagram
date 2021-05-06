@@ -8,4 +8,4 @@ keys_auth = {
     "databaseURL": "https://databaseName.firebaseio.com"
 }
 
-keys_database = 'keys/keys.json'
+keys_database = 'hackagram/keys/keys.json'
