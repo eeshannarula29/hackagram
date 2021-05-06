@@ -75,3 +75,7 @@ class Handler:
         # If no error was raised then delete the account
         self.auth.delete_user(self._token)
         self.database.delete_document(email)
+
+    @property
+    def token(self) -> str:
+        return self._token
